@@ -8,5 +8,7 @@
  * @author LENOVO
  */
 public class CarGameGUI {
-    
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
 }
