@@ -9,7 +9,5 @@ package Car;
  * @author LENOVO
  */
 public class CarGameGUI {
-    public CarGameGUI(){
-        System.out.println("Hello World");
-    }
+    
 }
