@@ -18,23 +18,31 @@ import javax.swing.JPanel;
 public class CarGameGUI {
     JFrame fr;
     JPanel carPanel;
+    CarHandler hnd;
+    int speed = 10;
+
     public CarGameGUI(){
+        hnd = new CarHandler(this);
         initGUI();
     }
-    public void initGUI(){
+
+    private void initGUI(){
         fr = new JFrame("Car Game");
         fr.setLayout(null);
+
         carPanel = new JPanel();
         carPanel.setSize(80,183);
-        
         JLabel car = new JLabel(new ImageIcon("ferrari5.png"));
         carPanel.add(car);
         carPanel.setLocation(350, 280);
         //carPanel.setBackground(Color.blue);
+
         fr.add(carPanel);
         fr.setSize(800,500);
+        fr.setResizable(false);
         fr.setVisible(true);
         fr.setLocationRelativeTo(null);
+        fr.addKeyListener(hnd);
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
