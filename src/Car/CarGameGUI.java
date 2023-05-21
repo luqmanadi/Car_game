@@ -19,9 +19,11 @@ public class CarGameGUI {
     JFrame fr;
     JPanel carPanel;
     CarHandler hnd;
-    int speed = 10;
-
+    JLabel background;
+    int speed = 30;
+    
     public CarGameGUI(){
+  
         hnd = new CarHandler(this);
         initGUI();
     }
@@ -29,16 +31,18 @@ public class CarGameGUI {
     private void initGUI(){
         fr = new JFrame("Car Game");
         fr.setLayout(null);
-
+        background = new JLabel("", new ImageIcon("background-image1.jpg"),JLabel.CENTER);
+        background.setBounds(0,0,500,707);
+        fr.add(background);
         carPanel = new JPanel();
         carPanel.setSize(80,183);
-        JLabel car = new JLabel(new ImageIcon("ferrari5.png"));
+        JLabel car = new JLabel(new ImageIcon("ferrari54.png"));
         carPanel.add(car);
-        carPanel.setLocation(350, 280);
-        //carPanel.setBackground(Color.blue);
-
-        fr.add(carPanel);
-        fr.setSize(800,500);
+        carPanel.setLocation(220, 480);
+        Color carBg = Color.decode("#545454");
+        carPanel.setBackground(carBg);
+        background.add(carPanel);
+        fr.setSize(500,707);
         fr.setResizable(false);
         fr.setVisible(true);
         fr.setLocationRelativeTo(null);
