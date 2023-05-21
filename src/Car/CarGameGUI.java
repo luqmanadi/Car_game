@@ -31,7 +31,7 @@ public class CarGameGUI {
     private void initGUI(){
         fr = new JFrame("Car Game");
         fr.setLayout(null);
-        background = new JLabel("", new ImageIcon("background-image1.jpg"),JLabel.CENTER);
+        background = new JLabel("", new ImageIcon("bg.gif"),JLabel.CENTER);
         background.setBounds(0,0,500,707);
         fr.add(background);
         carPanel = new JPanel();
