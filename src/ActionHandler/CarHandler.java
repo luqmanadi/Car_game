@@ -1,13 +1,16 @@
-package Car;
+package ActionHandler;
 
+import GUI.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class CarHandler implements KeyListener {
-    CarGameGUI g;
+    GameGUI g;
+    CarGUI c;
 
-    public CarHandler(CarGameGUI ref) {
-        this.g = ref;
+    public CarHandler(GameGUI g, CarGUI c) {
+        this.g = g;
+        this.c = c;
     }
 
     @Override
@@ -20,17 +23,18 @@ public class CarHandler implements KeyListener {
     public void keyPressed(KeyEvent ke) {
         // TODO Auto-generated method stub
         int code = ke.getKeyCode();
+   
         // System.out.println(code);
 
-        int x = g.carPanel.getX();
-        int y = g.carPanel.getY();
+        int x = c.carPanel.getX();
+        int y = c.carPanel.getY();
 
-        if (code == 37 && x - g.speed >= 0) { //Left
-            g.carPanel.setLocation(x - g.speed, y);
+        if (code == 37 && x - c.speed >= 20) { //Left
+            c.carPanel.setLocation(x - c.speed, y);
         }
 
-        if (code == 39 && x + g.speed <= g.fr.getWidth() - g.carPanel.getWidth() - 2) { //Right
-            g.carPanel.setLocation(x + g.speed, y);
+        if (code == 39 && x + c.speed <= g.fr.getWidth() - c.carPanel.getWidth() - 20) { //Right
+            c.carPanel.setLocation(x + c.speed, y);
         }
     }
 

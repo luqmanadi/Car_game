@@ -1,4 +1,4 @@
-import Car.CarGameGUI;
+import GUI.GameGUI;
 
 /**
  *
@@ -8,7 +8,7 @@ import Car.CarGameGUI;
 public class Driver {
     public static void main(String[] args) {
         // membuat objek CarGameGUI
-        CarGameGUI game = new CarGameGUI();
+        GameGUI game = new GameGUI();
     }
 }
 //c
