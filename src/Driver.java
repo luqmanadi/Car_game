@@ -8,7 +8,7 @@ import GUI.GameGUI;
 public class Driver {
     public static void main(String[] args) {
         // membuat objek CarGameGUI
-        GameGUI game = new GameGUI();
+        GameGUI gameGUI = new GameGUI();
     }
 }
 //c
