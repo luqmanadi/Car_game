@@ -2,12 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package GUI;
+package GUI; // Mendefinisikan package GUI
 
 /**
- *
- * @author LENOVO
+ * Interface InterfaceGUI merupakan antarmuka yang mendefinisikan metode initGUI().
  */
 public interface InterfaceGUI {
-    void initGUI();
+    void initGUI(); // Deklarasi metode initGUI() yang harus diimplementasikan oleh kelas yang mengimplementasikan antarmuka ini
 }

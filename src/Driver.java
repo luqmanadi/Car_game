@@ -1,14 +1,12 @@
-import GUI.GameGUI;
+import GUI.GameGUI; // Mengimpor kelas GameGUI dari package GUI
 
 /**
- *
- * @author Kelompok 11
+ * Author KELOMPOK 11
+ * Kelas Driver merupakan kelas utama untuk menjalankan program.
  */
-
 public class Driver {
     public static void main(String[] args) {
-        // membuat objek CarGameGUI
-        GameGUI gameGUI = new GameGUI();
+        // Membuat objek CarGameGUI
+        GameGUI gameGUI = new GameGUI(); // Membuat objek GameGUI yang mewakili antarmuka pengguna permainan
     }
 }
-//c
