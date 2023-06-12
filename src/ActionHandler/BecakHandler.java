@@ -41,7 +41,7 @@ public class BecakHandler {
         becaks[i] = new BecakGUI(); // Membuat objek becak pada indeks i
         filterLocation(i); // Memfilter lokasi becak pada indeks i
         gameGUIBackground.add(becaks[i].becakPanel); // Menambahkan panel becak ke latar belakang permainan
-        timerShifts[i] = new Timer(200, new ActionListener() {
+        timerShifts[i] = new Timer(becaks[i].speed, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 becaks[i].hLocation += 15; // Menggeser lokasi becak ke bawah

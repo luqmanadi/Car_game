@@ -15,7 +15,7 @@ import javax.swing.JPanel; // Mengimpor kelas JPanel dari paket javax.swing
 public class BecakGUI implements InterfaceGUI {
 
     public JPanel becakPanel; // Deklarasi variabel JPanel dengan nama becakPanel
-    public int speed = 30, hLocation, wLocation; // Deklarasi variabel speed dengan nilai awal 30, hLocation, dan wLocation
+    public int speed = 300, hLocation, wLocation; // Deklarasi variabel speed dengan nilai awal 30, hLocation, dan wLocation
 
     /**
      * Konstruktor BecakGUI.
