@@ -8,19 +8,23 @@ import javax.swing.JLabel; // Mengimpor kelas JLabel dari paket javax.swing
 import javax.swing.Timer; // Mengimpor kelas Timer dari paket javax.swing
 
 import GUI.BecakGUI; // Mengimpor kelas BecakGUI dari package GUI
+import javax.swing.JTextField;
 
 public class BecakHandler {
     public int totalBecak = 5; // Deklarasi variabel totalBecak dengan nilai 5
     public Timer[] timerShifts = new Timer[totalBecak]; // Array Timer untuk mengatur pergeseran becak
     public BecakGUI[] becaks = new BecakGUI[totalBecak]; // Array BecakGUI untuk menyimpan objek becak
     public JLabel gameGUIBackground; // JLabel latar belakang permainan
+    public JTextField scoreLabel;
+    public int score = 0;
 
     /**
      * Konstruktor BecakHandler.
      * @param gameGUIBackground JLabel yang merepresentasikan latar belakang permainan
      */
-    public BecakHandler(JLabel gameGUIBackground) {
+    public BecakHandler(JLabel gameGUIBackground, JTextField scoreLabel) {
         this.gameGUIBackground = gameGUIBackground; // Menginisialisasi latar belakang permainan
+        this.scoreLabel = scoreLabel;
         spawningBecak(); // Memulai penampilan becak
     }
 
@@ -48,6 +52,8 @@ public class BecakHandler {
                 if (becaks[i].hLocation <= 620) {
                     becaks[i].becakPanel.setLocation(becaks[i].becakPanel.getX(), becaks[i].hLocation);
                 } else {
+                    score+=1;
+                    scoreLabel.setText("Score: " + score);
                     filterLocation(i);
                 }
             }

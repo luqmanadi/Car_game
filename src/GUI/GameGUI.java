@@ -7,10 +7,12 @@ package GUI; // Mendefinisikan package GUI
 import ActionHandler.BecakHandler; // Mengimpor kelas BecakHandler dari package ActionHandler
 import ActionHandler.CarHandler; // Mengimpor kelas CarHandler dari package ActionHandler
 import ActionHandler.GameRunningHandler; // Mengimpor kelas GameRunningHandler dari package ActionHandler
+import java.awt.Color;
 
 import javax.swing.ImageIcon; // Mengimpor kelas ImageIcon dari paket javax.swing
 import javax.swing.JFrame; // Mengimpor kelas JFrame dari paket javax.swing
 import javax.swing.JLabel; // Mengimpor kelas JLabel dari paket javax.swing
+import javax.swing.JTextField;
 import javax.swing.Timer; // Mengimpor kelas Timer dari paket javax.swing
 
 /**
@@ -24,7 +26,7 @@ public class GameGUI implements InterfaceGUI {
     public GameRunningHandler gameOverHandler; // Deklarasi variabel GameRunningHandler dengan nama gameOverHandler
     public CarGUI car; // Deklarasi variabel CarGUI dengan nama car
     public Timer timerBecakLoop; // Deklarasi variabel Timer dengan nama timerBecakLoop
-
+    public JTextField scoreLabel;
     /**
      * Konstruktor GameGUI.
      */
@@ -48,7 +50,7 @@ public class GameGUI implements InterfaceGUI {
         gameOverLayout.setVisible(false); // Mengatur JLabel tidak terlihat (invisible) pada awalnya
         fr.add(gameOverLayout); // Menambahkan JLabel gameOverLayout ke JFrame
 
-
+        initScore();
        initCarHandler(); // Memanggil metode initCarHandler() untuk menginisialisasi handler mobil
         initBecakHandler(); // Memanggil metode initBecakHandler() untuk menginisialisasi handler becak
         initGameOverHandler(); // Memanggil metode initGameOverHandler() untuk menginisialisasi handler permainan selesai
@@ -60,6 +62,14 @@ public class GameGUI implements InterfaceGUI {
         fr.setLocationRelativeTo(null); // Mengatur posisi JFrame di tengah layar
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Mengatur operasi default saat tombol close di JFrame ditekan
     }
+    
+    private void initScore() {
+        scoreLabel = new JTextField("Score: ");
+        scoreLabel.setSize(100, 100);
+        scoreLabel.setLocation(40, 40);
+        scoreLabel.setBackground(new Color(0, 0, 0, 0));
+        background.add(scoreLabel);
+    }
         
     private void initCarHandler() {
         car = new CarGUI(); // Membuat objek CarGUI
@@ -69,7 +79,7 @@ public class GameGUI implements InterfaceGUI {
     }
 
     private void initBecakHandler() {
-        becakHandler = new BecakHandler(background); // Membuat objek BecakHandler dengan mengirimkan JLabel background sebagai argumen
+        becakHandler = new BecakHandler(background, scoreLabel); // Membuat objek BecakHandler dengan mengirimkan JLabel background sebagai argumen
     }
 
     private void initGameOverHandler() {
